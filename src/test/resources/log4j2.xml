@@ -1,0 +1,21 @@
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="log4j2.xsd">
+    <Appenders>
+        <!-- Console Logging -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <!-- File Logging (Creates a 'logs' folder) -->
+        <File name="File" fileName="logs/automation.log">
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/> <!-- Logs will be saved to 'logs/automation.log' -->
+        </Root>
+    </Loggers>
+</Configuration>

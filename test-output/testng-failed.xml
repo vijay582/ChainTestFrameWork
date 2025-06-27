@@ -10,9 +10,9 @@
       <class name="testCase.LoginTest">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyCart"/>
           <include name="setUp"/>
           <include name="attachScreenshotForFailedTestCase"/>
+          <include name="verilylogout"/>
         </methods>
       </class> <!-- testCase.LoginTest -->
     </classes>

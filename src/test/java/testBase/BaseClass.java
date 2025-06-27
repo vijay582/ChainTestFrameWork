@@ -1,6 +1,7 @@
 package testBase;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
@@ -9,6 +10,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -32,21 +34,29 @@ public class BaseClass {
 	public void setUp(String browser) throws IOException 
 	{ 
 		
-		prop = new Properties();
-		FileInputStream fis = new FileInputStream("./src/test/resources/config.Properties");
-	   prop.load(fis);
-		if(browser.equalsIgnoreCase("chrome"))
-		{
-		  driver = new ChromeDriver();
-		}
-		else if(browser.equalsIgnoreCase("edge")) 
-		{
-			driver = new EdgeDriver();
-		}
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.manage().window().maximize();
-		driver.get(prop.getProperty("url"));
+		try {
+			prop = new Properties();
+			FileInputStream fis = new FileInputStream("./src/test/resources/config.Properties");
+            prop.load(fis);
+			if(browser.equalsIgnoreCase("chrome"))
+			{
+			  driver = new ChromeDriver();
+			}
+			else if(browser.equalsIgnoreCase("edge")) 
+			{
+				driver = new EdgeDriver();
+			}
+			driver.manage().deleteAllCookies();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			driver.manage().window().maximize();
+			driver.get(prop.getProperty("url"));
+		} catch (FileNotFoundException e) {
+			
+			e.printStackTrace();
+		} 
+		
+		
+
 	} 
 	
 	

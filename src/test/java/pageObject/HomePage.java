@@ -1,5 +1,6 @@
 package pageObject;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,6 +25,18 @@ public class HomePage {
 	@FindBy(id="shopping_cart_container")
 	private WebElement cartCount;
 	
+	@FindBy(xpath="//button[normalize-space()='Open Menu']")
+	private WebElement burgerbutton;
+	
+	@FindBy(xpath ="//a[text()='Logout']")
+	private WebElement logoutButton;
+	
+	public void acceptAlert() {
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+    }
+
+	
 	public void addToCart()
 	{
 		textaddToCart.click();
@@ -39,7 +52,17 @@ public class HomePage {
 		WaitUtils.waitForElement(driver, cartCount);
 		return Integer.parseInt(cartCount.getText());
 	}
-
+   
+	public void clickBurgerButton() 
+	{
+		WaitUtils.waitForElement(driver, burgerbutton);
+		burgerbutton.click();
+	}
+	
+	 public void clickONLogout() 
+	 {
+		 logoutButton.click();
+	 }
 	}
 
 

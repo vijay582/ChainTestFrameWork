@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="2" total="7" passed="4" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-13T10:28:56 IST" name="Suite" finished-at="2025-06-13T10:29:05 IST" duration-ms="9158">
+  <suite started-at="2025-06-27T18:54:24 IST" name="Suite" finished-at="2025-06-27T18:55:05 IST" duration-ms="41657">
     <groups>
     </groups>
-    <test started-at="2025-06-13T10:28:56 IST" name="Test" finished-at="2025-06-13T10:29:05 IST" duration-ms="9158">
+    <test started-at="2025-06-27T18:54:24 IST" name="Test" finished-at="2025-06-27T18:55:05 IST" duration-ms="41657">
       <class name="testCase.LoginTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testCase.LoginTest@66238be2]" started-at="2025-06-13T10:28:56 IST" name="setUp" finished-at="2025-06-13T10:29:01 IST" duration-ms="4543" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testCase.LoginTest@4e31c3ec]" started-at="2025-06-27T18:54:24 IST" name="setUp" finished-at="2025-06-27T18:54:28 IST" duration-ms="4085" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,52 +18,205 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyLogin()[pri:1, instance:testCase.LoginTest@66238be2]" started-at="2025-06-13T10:29:01 IST" name="verifyLogin" finished-at="2025-06-13T10:29:04 IST" duration-ms="3156" status="PASS">
+        <test-method signature="verilylogout()[pri:0, instance:testCase.LoginTest@4e31c3ec]" started-at="2025-06-27T18:54:28 IST" name="verilylogout" finished-at="2025-06-27T18:54:48 IST" duration-ms="20544" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //button[normalize-space()='Open Menu']' (tried for 10 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //button[normalize-space()='Open Menu']' (tried for 10 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at utlity.WaitUtils.waitForElement(WaitUtils.java:14)
+at pageObject.HomePage.clickBurgerButton(HomePage.java:58)
+at testCase.LoginTest.verilylogout(LoginTest.java:95)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='Open Menu']"}
+  (Session info: chrome=137.0.7151.120)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4e92bbe8e25018eea93c49d653c5fa9f, findElement {value=//button[normalize-space()='Open Menu'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\vijay\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56673}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56673/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4e92bbe8e25018eea93c49d653c5fa9f
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy37.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+... 31 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verilylogout -->
+        <test-method is-config="true" signature="attachScreenshotForFailedTestCase(org.testng.ITestResult)[pri:0, instance:testCase.LoginTest@4e31c3ec]" started-at="2025-06-27T18:54:48 IST" name="attachScreenshotForFailedTestCase" finished-at="2025-06-27T18:54:49 IST" duration-ms="251" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verilylogout status=FAILURE method=LoginTest.verilylogout()[pri:0, instance:testCase.LoginTest@4e31c3ec] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- attachScreenshotForFailedTestCase -->
+        <test-method signature="verifyLogin(java.lang.String,java.lang.String)[pri:1, instance:testCase.LoginTest@4e31c3ec]" started-at="2025-06-27T18:54:51 IST" name="verifyLogin" data-provider="LoginData" finished-at="2025-06-27T18:54:53 IST" duration-ms="2623" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLogin -->
-        <test-method is-config="true" signature="attachScreenshotForFailedTestCase(org.testng.ITestResult)[pri:0, instance:testCase.LoginTest@66238be2]" started-at="2025-06-13T10:29:04 IST" name="attachScreenshotForFailedTestCase" finished-at="2025-06-13T10:29:04 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="attachScreenshotForFailedTestCase(org.testng.ITestResult)[pri:0, instance:testCase.LoginTest@4e31c3ec]" started-at="2025-06-27T18:54:54 IST" name="attachScreenshotForFailedTestCase" finished-at="2025-06-27T18:54:54 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyLogin status=SUCCESS method=LoginTest.verifyLogin()[pri:1, instance:testCase.LoginTest@66238be2] output={null}]]]>
+                <![CDATA[[TestResult name=verifyLogin status=SUCCESS method=LoginTest.verifyLogin(java.lang.String,java.lang.String)[pri:1, instance:testCase.LoginTest@4e31c3ec] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- attachScreenshotForFailedTestCase -->
-        <test-method signature="verifyHomePage()[pri:2, instance:testCase.LoginTest@66238be2]" started-at="2025-06-13T10:29:04 IST" name="verifyHomePage" finished-at="2025-06-13T10:29:04 IST" duration-ms="376" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyHomePage -->
-        <test-method is-config="true" signature="attachScreenshotForFailedTestCase(org.testng.ITestResult)[pri:0, instance:testCase.LoginTest@66238be2]" started-at="2025-06-13T10:29:04 IST" name="attachScreenshotForFailedTestCase" finished-at="2025-06-13T10:29:04 IST" duration-ms="4" status="PASS">
+        <test-method signature="verifyLogin(java.lang.String,java.lang.String)[pri:1, instance:testCase.LoginTest@4e31c3ec]" started-at="2025-06-27T18:54:54 IST" name="verifyLogin" data-provider="LoginData" finished-at="2025-06-27T18:55:03 IST" duration-ms="9345" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyHomePage status=SUCCESS method=LoginTest.verifyHomePage()[pri:2, instance:testCase.LoginTest@66238be2] output={null}]]]>
+                <![CDATA[locked_out_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogin -->
+        <test-method is-config="true" signature="attachScreenshotForFailedTestCase(org.testng.ITestResult)[pri:0, instance:testCase.LoginTest@4e31c3ec]" started-at="2025-06-27T18:55:03 IST" name="attachScreenshotForFailedTestCase" finished-at="2025-06-27T18:55:03 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLogin status=SUCCESS method=LoginTest.verifyLogin(java.lang.String,java.lang.String)[pri:1, instance:testCase.LoginTest@4e31c3ec] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- attachScreenshotForFailedTestCase -->
-        <test-method signature="verifyCart()[pri:3, instance:testCase.LoginTest@66238be2]" started-at="2025-06-13T10:29:04 IST" name="verifyCart" finished-at="2025-06-13T10:29:05 IST" duration-ms="326" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCart -->
-        <test-method is-config="true" signature="attachScreenshotForFailedTestCase(org.testng.ITestResult)[pri:0, instance:testCase.LoginTest@66238be2]" started-at="2025-06-13T10:29:05 IST" name="attachScreenshotForFailedTestCase" finished-at="2025-06-13T10:29:05 IST" duration-ms="10" status="PASS">
+        <test-method signature="verifyLogin(java.lang.String,java.lang.String)[pri:1, instance:testCase.LoginTest@4e31c3ec]" started-at="2025-06-27T18:55:03 IST" name="verifyLogin" data-provider="LoginData" finished-at="2025-06-27T18:55:04 IST" duration-ms="819" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyCart status=SUCCESS method=LoginTest.verifyCart()[pri:3, instance:testCase.LoginTest@66238be2] output={null}]]]>
+                <![CDATA[problem_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogin -->
+        <test-method is-config="true" signature="attachScreenshotForFailedTestCase(org.testng.ITestResult)[pri:0, instance:testCase.LoginTest@4e31c3ec]" started-at="2025-06-27T18:55:04 IST" name="attachScreenshotForFailedTestCase" finished-at="2025-06-27T18:55:04 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLogin status=SUCCESS method=LoginTest.verifyLogin(java.lang.String,java.lang.String)[pri:1, instance:testCase.LoginTest@4e31c3ec] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- attachScreenshotForFailedTestCase -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCase.LoginTest@66238be2]" started-at="2025-06-13T10:29:05 IST" name="tearDown" finished-at="2025-06-13T10:29:05 IST" duration-ms="523" status="PASS">
+        <test-method signature="verifyLogin(java.lang.String,java.lang.String)[pri:1, instance:testCase.LoginTest@4e31c3ec]" started-at="2025-06-27T18:55:04 IST" name="verifyLogin" data-provider="LoginData" finished-at="2025-06-27T18:55:05 IST" duration-ms="900" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[performance_glitch_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogin -->
+        <test-method is-config="true" signature="attachScreenshotForFailedTestCase(org.testng.ITestResult)[pri:0, instance:testCase.LoginTest@4e31c3ec]" started-at="2025-06-27T18:55:05 IST" name="attachScreenshotForFailedTestCase" finished-at="2025-06-27T18:55:05 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLogin status=SUCCESS method=LoginTest.verifyLogin(java.lang.String,java.lang.String)[pri:1, instance:testCase.LoginTest@4e31c3ec] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- attachScreenshotForFailedTestCase -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCase.LoginTest@4e31c3ec]" started-at="2025-06-27T18:55:05 IST" name="tearDown" finished-at="2025-06-27T18:55:05 IST" duration-ms="577" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
